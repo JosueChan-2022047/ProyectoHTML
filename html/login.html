@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronLife - Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="login-page">
+
+    <div class="login-box">
+        <h1>IronLife</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="user">Usuario</label>
+                <input id="user" type="text" placeholder="Ingresa tu usuario" required>
+            </div>
+            <div class="input-group">
+                <label for="pass">Contraseña</label>
+                <input id="pass" type="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-login">Entrenar</button>
+        </form>
+        <p style="font-size:0.8rem; color:#555; margin-top:10px;">Usuario de prueba: <strong>admin</strong> / Contraseña: <strong>1234</strong></p>
+        <script>
+           
+            const VALID_USER = 'admin';
+            const VALID_PASS = '1234';
+
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const user = document.getElementById('user').value.trim();
+                const pass = document.getElementById('pass').value;
+                if (user === VALID_USER && pass === VALID_PASS) {
+                  
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Usuario o contraseña incorrectos.');
+                }
+            });
+        </script>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #777;">© 2023 IronLife Gym</p>
+    </div>
+
+</body>
+</html>
